@@ -2,7 +2,7 @@ import React from 'react'
 
 function Jobs() {
   return (
-    <div>Jobs</div>
+    <div> </div>
   )
 }
 
