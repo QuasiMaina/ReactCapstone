@@ -1,25 +1,18 @@
+// NoticeBoard.jsx
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Jobs from './Jobs';
-import Crew from './Crew';
-import Ratecards from './Ratecards';
-import Equipment from './Equipment';
-import ProductionHse from './ProductionHse';
-import WannaVent from './WannaVent';
 import StickyNote from './StickyNote';
-import Actors from './Actors';
 
 const notes = [
-  { id: 1, text: 'JOBS', color: 'bg-yellow-400', path: '/jobs' },
-  { id: 2, text: 'CREW', color: 'bg-green-400', path: '/crew' },
-  { id: 3, text: 'ACTORS', color: 'bg-pink-400', path: '/actors' },
-  { id: 4, text: 'RATE CARDS', color: 'bg-blue-500', path: '/ratecards' },
-  { id: 5, text: 'EQUIPMENT', color: 'bg-purple-500', path: '/equipment' },
-  { id: 6, text: 'PRODUCTION HOUSE', color: 'bg-red-600', path: '/productionhse' },
-  { id: 7, text: 'WANNA VENT?', color: 'bg-lime-400', path: '/wannavent' },
+  { id: 1, text: 'JOBS', color: 'bg-yellow-400', path: '/noticeboard/jobs' },
+  { id: 2, text: 'CREW', color: 'bg-green-400', path: '/noticeboard/crew' },
+  { id: 3, text: 'ACTORS', color: 'bg-pink-400', path: '/noticeboard/actors' },
+  { id: 4, text: 'RATE CARDS', color: 'bg-blue-500', path: '/noticeboard/ratecards' },
+  { id: 5, text: 'EQUIPMENT', color: 'bg-purple-500', path: '/noticeboard/equipment' },
+  { id: 6, text: 'PRODUCTION HOUSE', color: 'bg-red-600', path: '/noticeboard/productionhse' },
+  { id: 7, text: 'WANNA VENT?', color: 'bg-lime-400', path: '/noticeboard/wannavent' },
 ];
 
-function BoardLayout() {
+export default function NoticeBoard() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-start bg-teal-300 p-4 sm:p-6 md:p-8">
       <div
@@ -47,27 +40,5 @@ function BoardLayout() {
         </div>
       </div>
     </div>
-  );
-}
-
-export default function NoticeBoard() {
-  return (
-    <Router>
-      <Switch>
-        <Route path="/" exact component={BoardLayout} />
-        <Route path="/jobs" exact component={Jobs} />
-        <Route path="/crew" component={Crew} />
-        <Route path="/actors" component={Actors} />
-        <Route path="/ratecards" component={Ratecards} />
-        <Route path="/equipment" component={Equipment} />
-        <Route path="/productionhse" component={ProductionHse} />
-        <Route path="/wannavent" component={WannaVent} />
-        <Route path="*">
-
-          {/* Error Page */}
-          <div className="text-center text-xl text-red-700 mt-6">Jaribu Next Door</div>
-        </Route>
-      </Switch>
-    </Router>
   );
 }
